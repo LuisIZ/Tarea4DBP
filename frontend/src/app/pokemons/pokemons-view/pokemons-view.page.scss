@@ -13,4 +13,26 @@ ion-content.Top, ion-toolbar.Only, ion-header {
 ion-header.UpperTop {
     height: 0%;
 }
+
+
+img {
+    height: 300px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+
+ion-label {
+    text-align: center;
+}
     
+h3 {
+    font-size: x-large;
+}
+
+p {
+    font-size: large;
+    color: gray;
+}

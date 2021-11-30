@@ -11,8 +11,32 @@
     </ion-toolbar>
   </ion-header>
 
-  
-  
+  <ion-content *ngFor="let item of pokemon">
+    <ion-toolbar>
+      <ion-buttons *ngIf="item">
+          <ion-button [routerLink]="['/pokemons/edit',item.id]">
+              <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+      <ion-buttons *ngIf="item" slot="primary">
+        <ion-button [routerLink]="['/pokemons/delete',item.id]">
+            <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title *ngIf="Item"></ion-title>
+    </ion-toolbar>
 
+    <img src={{item.url}}/>
+
+    <ion-label>
+      <h3> <b>{{item.nombre}}</b></h3>
+      <p> <b>Category: </b> <i> {{item.categoria}} </i> </p>
+      <p> <b>Type: </b>  <i> {{item.tipo}} </i> </p>
+      <p> <b>Ability: </b>  <i> {{item.habilidad}} </i> </p>
+      <p> <b>Height: </b>  <i> {{item.altura}} cm</i> </p>
+      <p> <b>Weight: </b>  <i> {{item.peso}} kg</i> </p>
+    </ion-label>
+
+  </ion-content>
 </ion-content>
 
