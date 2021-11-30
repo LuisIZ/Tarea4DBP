@@ -5,9 +5,26 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="Top">
+
   <ion-header collapse="condense">
     <ion-toolbar class="Only">
       <ion-title size="large" class="TopText">Pokédex</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let item of pokemons" [routerLink]="['/pokemons/view',item.id]">
+
+      <ion-avatar slot="start">
+        <img src={{item.url}}/>
+      </ion-avatar>
+
+    <ion-label>
+      <h3>{{item.nombre}}</h3>
+      <p>{{item.habilidad}}</p>
+    </ion-label>
+
+    </ion-item>
+  </ion-list>
+
 </ion-content>
