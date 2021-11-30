@@ -13,7 +13,7 @@
   </ion-header>
 
   <ion-list>
-    <ion-item *ngFor="let item of pokemons" [routerLink]="['/pokemons/view',item.id]">
+    <ion-item *ngFor="let item of pokemon" [routerLink]="['/pokemons/view',item.id]">
 
       <ion-avatar slot="start">
         <img src={{item.url}}/>
@@ -28,3 +28,4 @@
   </ion-list>
 
 </ion-content>
+

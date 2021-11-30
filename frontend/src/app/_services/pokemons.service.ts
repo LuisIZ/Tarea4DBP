@@ -15,7 +15,7 @@ export class PokemonsService {
   }
 
   getPokemonID(id:any){
-    return this.http.get<any>('http://localhost:3000/${id}')
+    return this.http.get<any>(`http://localhost:3000/pokemons/${id}`)
   }
 
   insertPokemon(pokemon:any){
@@ -23,11 +23,11 @@ export class PokemonsService {
   }
 
   updatePokemon(id:any,pokemon:any){
-    return this.http.put<any>('http://localhost:3000/pokemons/${id}',pokemon)
+    return this.http.put<any>(`http://localhost:3000/pokemons/${id}`,pokemon)
   }
 
   deletePokemon(id:any){
-    return this.http.delete<any>('http://localhost:3000/pokemons/${id}');
+    return this.http.delete<any>(`http://localhost:3000/pokemons/${id}`);
   }
 
 }

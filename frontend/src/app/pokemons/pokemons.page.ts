@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {range} from 'rxjs';
+import {PokemonsService} from '../_services/pokemons.service';
 
 @Component({
   selector: 'app-pokemons',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonsPage implements OnInit {
 
-  constructor() { }
+  pokemon:any[];
+
+  constructor(
+    private pokemonService: PokemonsService
+  ) { }
 
   ngOnInit() {
   }
 
+  ionViewWillEnter():void{
+    this.pokemonService.getPokemons().subscribe(data=>{
+      this.pokemon=data;
+      console.log(data);
+    })
+  }
 }
