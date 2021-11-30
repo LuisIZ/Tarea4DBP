@@ -1,9 +1,31 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>pokemons-delete</ion-title>
+<ion-header [translucent]="true" class="UpperTop">
+  <ion-toolbar class="Only">
+    <ion-title size="large" class="TopText">Pokédex</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+
+<ion-content [fullscreen]="true" class="Top">
+
+  <ion-content *ngFor="let item of pokemon">
+  
+  <img src={{item.url}}/>
+
+  <h3>Are you sure you want to <b><u> delete {{item.nombre}}</u></b> from your list of Pokémons? </h3>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button class="Si" color="success" (click)="deletePokemon(id)">YES<ion-icon name="checkmark" class="Check" ></ion-icon></ion-button>
+        <ion-button class="No" color="danger" [routerLink]="['/pokemons/view',item.id]">NO<ion-icon name="close" class="Close"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  
+  </ion-content>
 
 </ion-content>
+
+
+

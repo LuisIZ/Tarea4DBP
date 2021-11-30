@@ -1,17 +1,12 @@
 <ion-header [translucent]="true" class="UpperTop">
-  <ion-toolbar>
-    <ion-title>pokemons-view</ion-title>
+  <ion-toolbar class="Only">
+    <ion-title size="large" class="TopText">Pokédex</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="Top">
   <ion-content *ngFor="let item of pokemon">
-    <ion-header collapse="condense">
-      <ion-toolbar class="Only">
-        <ion-title size="large" class="TopText">Pokédex</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-toolbar>
+    <ion-toolbar class="botones">
       <ion-buttons *ngIf="item">
           <ion-button [routerLink]="['/pokemons/edit',item.id]">
               <ion-icon slot="icon-only" name="create-outline"></ion-icon>
