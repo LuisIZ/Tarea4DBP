@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup} from '@angular/forms';
 import {ActivatedRoute,Router} from '@angular/router';
 import { PokemonsService } from 'src/app/_services/pokemons.service';
-
+import { ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-pokemons-edit',
@@ -13,7 +13,7 @@ export class PokemonsEditPage implements OnInit {
 
   pokemon:any;
   pokemonID:any;
-  pokemonForm:any;
+  pokemonForm:FormGroup
 
   constructor(
     private pokemonService: PokemonsService,
@@ -49,8 +49,8 @@ export class PokemonsEditPage implements OnInit {
     );
   }
 
-  updatePokemon(val:any){
-    this.pokemonService.updatePokemon(this.pokemonID,val).subscribe(
+  updatePokemon(values:any){
+    this.pokemonService.updatePokemon(this.pokemonID,values).subscribe(
       response=>{
         console.log(response);
         this.router.navigate(['/pokemons']);

@@ -10,38 +10,42 @@
 
   <h3>Edit {{item.nombre}}'s information</h3>
 
-  <ion-item>
-    <ion-label position="floating"> <u>Picture</u> <b> (only url is accepted)</b></ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating"> <u>Name</u> </ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating"> <u>Height</u> <b> (in centimeters or cm)</b></ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating"> <u>Category</u> </ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating"> <u>Weight</u> <b> (in kilograms or kg)</b> </ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating"> <u>Ability</u> </ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating"> <u>Type</u> </ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
+  <form [formGroup]="pokemonForm" (ngSubmit)="updatePokemon(pokemonForm.value)">
 
-  <ion-button>
-    <h6>Save new information</h6>
-  </ion-button>
+    <ion-item>
+      <ion-label position="floating"> <u>Picture</u> <b> (only url is accepted)</b></ion-label>
+      <ion-input type="text" formControlName="url"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> <u>Name</u> </ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> <u>Height</u> <b> (in centimeters or cm)</b></ion-label>
+      <ion-input type="number" formControlName="altura"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> <u>Category</u> </ion-label>
+      <ion-input type="text" formControlName="categoria"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> <u>Weight</u> <b> (in kilograms or kg)</b> </ion-label>
+      <ion-input type="number" formControlName="peso"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> <u>Ability</u> </ion-label>
+      <ion-input type="text" formControlName="habilidad"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> <u>Type</u> </ion-label>
+      <ion-input type="text" formControlName="tipo"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit">
+      <h6>Save new information</h6>
+    </ion-button>
+
+  </form>
 
  </div>
 
