@@ -8,7 +8,7 @@
 
   <h3>Add your new pokémon's information </h3>
 
-  <form [formGroup]="FormPoke" (ngSubmit)="addPokemon(FormPoke.value)">
+  <form [formGroup]="FormPoke" (ngSubmit)="insertPokemon(FormPoke.value)">
 
     <ion-item>
       <ion-label position="floating"> <u>Picture</u> <b> (only url is accepted)</b></ion-label>
