@@ -4,7 +4,45 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="Top">
+<ion-content [fullscreen]="true" *ngFor="let item of pokemon" class="Top">
 
+ <div class="params">
+
+  <h3>Edit {{item.nombre}}'s information</h3>
+
+  <ion-item>
+    <ion-label position="floating"> <u>Picture</u> <b> (only url is accepted)</b></ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> <u>Name</u> </ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> <u>Height</u> <b> (in centimeters or cm)</b></ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> <u>Category</u> </ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> <u>Weight</u> <b> (in kilograms or kg)</b> </ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> <u>Ability</u> </ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating"> <u>Type</u> </ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-button>
+    <h6>Save new information</h6>
+  </ion-button>
+
+ </div>
 
 </ion-content>
